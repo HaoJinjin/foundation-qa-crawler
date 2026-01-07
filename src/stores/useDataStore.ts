@@ -134,11 +134,11 @@ export const useDataStore = defineStore('data', () => {
     try {
       const response = await apiClient.getDashboard();
 
-      if (response.data) {
-        dashboardData.value = response.data;
-        console.log('Dashboard数据加载成功', response.data);
+      if (response.data && response.data.data) {
+        dashboardData.value = response.data.data;
+        console.log('Dashboard数据加载成功', response.data.data);
       } else {
-        throw new Error(response.message || '获取Dashboard数据失败');
+        throw new Error(response.data?.message || '获取Dashboard数据失败');
       }
     } catch (error: any) {
       errors.value.dashboard = error?.response?.data?.message || error?.message || '未知错误';
@@ -162,11 +162,11 @@ export const useDataStore = defineStore('data', () => {
     try {
       const response = await apiClient.getTrends(granularity, startDate, endDate);
 
-      if (response.data) {
-        trendsData.value = response.data;
-        console.log('趋势数据加载成功', response.data);
+      if (response.data && response.data.data) {
+        trendsData.value = response.data.data;
+        console.log('趋势数据加载成功', response.data.data);
       } else {
-        throw new Error(response.message || '获取趋势数据失败');
+        throw new Error(response.data?.message || '获取趋势数据失败');
       }
     } catch (error: any) {
       errors.value.trends = error?.response?.data?.message || error?.message || '未知错误';
@@ -186,11 +186,11 @@ export const useDataStore = defineStore('data', () => {
     try {
       const response = await apiClient.getUsersAnalysis(limit, sortBy);
 
-      if (response.data) {
-        usersData.value = response.data;
-        console.log('用户数据加载成功', response.data);
+      if (response.data && response.data.data) {
+        usersData.value = response.data.data;
+        console.log('用户数据加载成功', response.data.data);
       } else {
-        throw new Error(response.message || '获取用户数据失败');
+        throw new Error(response.data?.message || '获取用户数据失败');
       }
     } catch (error: any) {
       errors.value.users = error?.response?.data?.message || error?.message || '未知错误';
@@ -210,11 +210,11 @@ export const useDataStore = defineStore('data', () => {
     try {
       const response = await apiClient.getTagsAnalysis(limit);
 
-      if (response.data) {
-        tagsData.value = response.data;
-        console.log('标签数据加载成功', response.data);
+      if (response.data && response.data.data) {
+        tagsData.value = response.data.data;
+        console.log('标签数据加载成功', response.data.data);
       } else {
-        throw new Error(response.message || '获取标签数据失败');
+        throw new Error(response.data?.message || '获取标签数据失败');
       }
     } catch (error: any) {
       errors.value.tags = error?.response?.data?.message || error?.message || '未知错误';
@@ -240,11 +240,11 @@ export const useDataStore = defineStore('data', () => {
     try {
       const response = await apiClient.getQuestionsList(page, limit, sortBy, order, search);
 
-      if (response.data) {
-        questionsData.value = response.data;
-        console.log('问题列表加载成功', response.data);
+      if (response.data && response.data.data) {
+        questionsData.value = response.data.data;
+        console.log('问题列表加载成功', response.data.data);
       } else {
-        throw new Error(response.message || '获取问题列表失败');
+        throw new Error(response.data?.message || '获取问题列表失败');
       }
     } catch (error: any) {
       errors.value.questions = error?.response?.data?.message || error?.message || '未知错误';
@@ -271,16 +271,18 @@ export const useDataStore = defineStore('data', () => {
         crawlerConfig.value.asyncMode
       );
 
-      if (response.data && response.data.task_id) {
-        crawlerState.value.currentTaskId = response.data.task_id;
-        console.log('爬虫任务已提交，TaskID:', response.data.task_id);
+      console.log('爬虫启动响应:', response.data);
+
+      if (response.data && response.data.data && response.data.data.task_id) {
+        crawlerState.value.currentTaskId = response.data.data.task_id;
+        console.log('爬虫任务已提交，TaskID:', response.data.data.task_id);
 
         // 如果是异步模式，开始轮询
         if (crawlerConfig.value.asyncMode) {
           await pollCrawler();
         }
       } else {
-        throw new Error(response.message || '启动爬虫失败');
+        throw new Error(response.data?.message || '启动爬虫失败');
       }
     } catch (error: any) {
       errors.value.crawler = error?.response?.data?.message || error?.message || '未知错误';

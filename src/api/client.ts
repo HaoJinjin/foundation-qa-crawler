@@ -161,25 +161,25 @@ class ApiClient {
     maxPages: number = 10,
     timeout: number = 30,
     asyncMode: boolean = true
-  ): Promise<ApiResponse<CrawlerStartResponse>> {
+  ): Promise<AxiosResponse<ApiResponse<CrawlerStartResponse>>> {
     return this.client.post('/crawler/start', {
       max_pages: maxPages,
       timeout,
-      async: asyncMode,
+      async_mode: asyncMode,
     });
   }
 
   /**
    * 查询爬虫任务状态
    */
-  async getCrawlerTask(taskId: string): Promise<ApiResponse<CrawlerTaskResponse>> {
+  async getCrawlerTask(taskId: string): Promise<AxiosResponse<ApiResponse<CrawlerTaskResponse>>> {
     return this.client.get(`/crawler/task/${taskId}`);
   }
 
   /**
    * 停止爬虫任务
    */
-  async stopCrawlerTask(taskId: string): Promise<ApiResponse> {
+  async stopCrawlerTask(taskId: string): Promise<AxiosResponse<ApiResponse>> {
     return this.client.post(`/crawler/stop/${taskId}`);
   }
 
@@ -191,7 +191,7 @@ class ApiClient {
   async getDashboard(
     useCache: boolean = true,
     cacheTtl: number = 3600
-  ): Promise<ApiResponse<DashboardData>> {
+  ): Promise<AxiosResponse<ApiResponse<DashboardData>>> {
     return this.client.get('/analysis/dashboard', {
       params: {
         use_cache: useCache,
@@ -209,7 +209,7 @@ class ApiClient {
     endDate?: string,
     useCache: boolean = true,
     cacheTtl: number = 7200
-  ): Promise<ApiResponse<TrendsData>> {
+  ): Promise<AxiosResponse<ApiResponse<TrendsData>>> {
     return this.client.get('/analysis/trends', {
       params: {
         start_date: startDate,
@@ -229,7 +229,7 @@ class ApiClient {
     sortBy: string = 'question_count',
     useCache: boolean = true,
     cacheTtl: number = 3600
-  ): Promise<ApiResponse<UsersData>> {
+  ): Promise<AxiosResponse<ApiResponse<UsersData>>> {
     return this.client.get('/analysis/users', {
       params: {
         limit,
@@ -247,7 +247,7 @@ class ApiClient {
     limit: number = 15,
     useCache: boolean = true,
     cacheTtl: number = 7200
-  ): Promise<ApiResponse<TagsData>> {
+  ): Promise<AxiosResponse<ApiResponse<TagsData>>> {
     return this.client.get('/analysis/tags', {
       params: {
         limit,
@@ -266,7 +266,7 @@ class ApiClient {
     sortBy: string = 'views',
     order: string = 'desc',
     search?: string
-  ): Promise<ApiResponse<QuestionsListData>> {
+  ): Promise<AxiosResponse<ApiResponse<QuestionsListData>>> {
     return this.client.get('/analysis/questions', {
       params: {
         page,
@@ -283,21 +283,21 @@ class ApiClient {
   /**
    * 获取系统状态
    */
-  async getSystemStatus(): Promise<ApiResponse<SystemStatus>> {
+  async getSystemStatus(): Promise<AxiosResponse<ApiResponse<SystemStatus>>> {
     return this.client.get('/system/status');
   }
 
   /**
    * 获取缓存状态
    */
-  async getCacheStatus(): Promise<ApiResponse> {
+  async getCacheStatus(): Promise<AxiosResponse<ApiResponse>> {
     return this.client.get('/system/cache-status');
   }
 
   /**
    * 清空缓存
    */
-  async clearCache(cacheKeys?: string[]): Promise<ApiResponse> {
+  async clearCache(cacheKeys?: string[]): Promise<AxiosResponse<ApiResponse>> {
     if (cacheKeys) {
       return this.client.post('/system/cache-clear', {
         cache_keys: cacheKeys,
@@ -323,8 +323,8 @@ class ApiClient {
       try {
         const response = await this.getCrawlerTask(taskId);
 
-        if (response.data) {
-          const task = response.data;
+        if (response.data && response.data.data) {
+          const task = response.data.data;
 
           // 调用进度回调
           if (onProgress) {

@@ -112,7 +112,7 @@ const navItems = [
 const getSystemStatus = async () => {
   try {
     const response = await apiClient.getSystemStatus()
-    systemStatus.value = response.data
+    systemStatus.value = response.data.data
   } catch (error) {
     console.error('获取系统状态失败:', error)
   }

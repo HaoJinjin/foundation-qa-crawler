@@ -48,7 +48,7 @@
       <!-- 热门问题排行 -->
       <div class="card">
         <h2>🔥 热门问题 (Top 10)</h2>
-        <el-table :data="dashboardData.top_questions" stripe max-height="400">
+        <el-table :data="dashboardData.top_questions"  max-height="400">
           <el-table-column prop="title" label="标题" min-width="200" show-overflow-tooltip />
           <el-table-column prop="views" label="浏览" width="80" align="right" />
           <el-table-column prop="likes" label="点赞" width="80" align="right" />
@@ -322,23 +322,31 @@ onMounted(async () => {
 /* ==================== 表格美化 ==================== */
 .el-table {
   background-color: transparent !important;
+  width: 100%;
 }
 
 .el-table__header th {
   background-color: var(--bg-hover) !important;
   color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
 }
 
 .el-table__body tr {
   background-color: transparent !important;
 }
 
+/* 移除斑马纹 */
+.el-table__body tr.el-table__row--striped {
+  background-color: transparent !important;
+}
+
 .el-table__body tr:hover > td {
-  background-color: rgba(0, 212, 255, 0.05) !important;
+  background-color: rgba(0, 212, 255, 0.08) !important;
 }
 
 .el-table__body td {
   color: var(--text-primary) !important;
+  border-bottom: 1px solid rgba(42, 63, 95, 0.3) !important;
 }
 
 /* ==================== 响应式 ==================== */

@@ -30,7 +30,7 @@
 
     <!-- 数据表 -->
     <div class="card" v-if="!loading && questionsData">
-      <el-table :data="questionsData.questions" stripe style="width: 100%">
+      <el-table :data="questionsData.questions" style="width: 100%">
         <el-table-column type="index" label="序号" width="60" align="center" />
         <el-table-column prop="title" label="标题" min-width="250" show-overflow-tooltip>
           <template #default="scope">
@@ -175,23 +175,31 @@ onMounted(async () => {
 /* ==================== 表格美化 ==================== */
 .el-table {
   background-color: transparent !important;
+  width: 100%;
 }
 
 .el-table__header th {
   background-color: var(--bg-hover) !important;
   color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
 }
 
 .el-table__body tr {
   background-color: transparent !important;
 }
 
+/* 移除斑马纹 */
+.el-table__body tr.el-table__row--striped {
+  background-color: transparent !important;
+}
+
 .el-table__body tr:hover > td {
-  background-color: rgba(0, 212, 255, 0.05) !important;
+  background-color: rgba(0, 212, 255, 0.08) !important;
 }
 
 .el-table__body td {
   color: var(--text-primary) !important;
+  border-bottom: 1px solid rgba(42, 63, 95, 0.3) !important;
 }
 
 /* ==================== 标签容器 ==================== */

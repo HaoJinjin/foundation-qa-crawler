@@ -25,3 +25,4 @@ dist-ssr
 
 # Ignore specific files
 backendData/nul
+backendData/output

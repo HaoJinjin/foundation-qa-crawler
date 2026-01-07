@@ -29,19 +29,19 @@
     <!-- 数据表格 -->
     <div class="card" v-if="!loading && trendsData">
       <h2>📊 月度数据统计</h2>
-      <el-table :data="trendsData.data" stripe max-height="400">
-        <el-table-column prop="period" label="时期" width="100" />
-        <el-table-column prop="question_count" label="问题数" width="100" align="right" />
-        <el-table-column prop="total_views" label="总浏览" width="100" align="right" />
-        <el-table-column prop="total_likes" label="总点赞" width="100" align="right" />
-        <el-table-column prop="total_answers" label="总回答" width="100" align="right" />
+      <el-table :data="trendsData.data" max-height="400">
+        <el-table-column prop="period" label="时期" min-width="120" />
+        <el-table-column prop="question_count" label="问题数" min-width="120" align="right" />
+        <el-table-column prop="total_views" label="总浏览" min-width="120" align="right" />
+        <el-table-column prop="total_likes" label="总点赞" min-width="120" align="right" />
+        <el-table-column prop="total_answers" label="总回答" min-width="120" align="right" />
       </el-table>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed, watch } from 'vue'
+import { ref, onMounted, computed, watch, nextTick } from 'vue'
 import { useDataStore } from '@/stores/useDataStore'
 import * as echarts from 'echarts'
 import { ElMessage } from 'element-plus'
@@ -56,9 +56,19 @@ const loading = computed(() => dataStore.loading.trends)
 const trendsData = computed(() => dataStore.trendsData)
 
 // 初始化图表
-const initChart = () => {
-  if (!chartContainer.value) return
-  if (!trendsData.value) return
+const initChart = async () => {
+  // 等待 DOM 更新
+  await nextTick()
+
+  if (!chartContainer.value) {
+    console.warn('图表容器未找到')
+    return
+  }
+
+  if (!trendsData.value || !trendsData.value.data || trendsData.value.data.length === 0) {
+    console.warn('趋势数据为空')
+    return
+  }
 
   if (!chart) {
     chart = echarts.init(chartContainer.value)
@@ -196,13 +206,14 @@ const initChart = () => {
 // 刷新数据
 const refreshData = async () => {
   await dataStore.fetchTrends(granularity.value)
+  await initChart()
   ElMessage.success('数据已刷新')
 }
 
 // 监听趋势数据变化
-watch(trendsData, () => {
-  if (trendsData.value) {
-    initChart()
+watch(trendsData, async (newVal) => {
+  if (newVal && newVal.data && newVal.data.length > 0) {
+    await initChart()
   }
 }, { deep: true })
 
@@ -217,6 +228,9 @@ const handleResize = () => {
 onMounted(async () => {
   if (!trendsData.value) {
     await dataStore.fetchTrends(granularity.value)
+  } else {
+    // 如果已有数据，直接初始化图表
+    await initChart()
   }
   window.addEventListener('resize', handleResize)
 })
@@ -283,22 +297,30 @@ onBeforeUnmount(() => {
 /* ==================== 表格美化 ==================== */
 .el-table {
   background-color: transparent !important;
+  width: 100%;
 }
 
 .el-table__header th {
   background-color: var(--bg-hover) !important;
   color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
 }
 
 .el-table__body tr {
   background-color: transparent !important;
 }
 
+/* 移除斑马纹 */
+.el-table__body tr.el-table__row--striped {
+  background-color: transparent !important;
+}
+
 .el-table__body tr:hover > td {
-  background-color: rgba(0, 212, 255, 0.05) !important;
+  background-color: rgba(0, 212, 255, 0.08) !important;
 }
 
 .el-table__body td {
   color: var(--text-primary) !important;
+  border-bottom: 1px solid rgba(42, 63, 95, 0.3) !important;
 }
 </style>

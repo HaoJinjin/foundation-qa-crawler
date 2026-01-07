@@ -29,7 +29,7 @@
     <!-- 用户排行表 -->
     <div class="card" v-if="!loading && usersData">
       <h2>🏆 用户排行榜 (Top 10)</h2>
-      <el-table :data="usersData.users" stripe max-height="600">
+      <el-table :data="usersData.users" max-height="600">
         <el-table-column prop="rank" label="排名" width="60" align="center">
           <template #default="scope">
             <span :class="['rank-badge', `rank-${scope.row.rank}`]">
@@ -213,23 +213,31 @@ onMounted(async () => {
 /* ==================== 表格美化 ==================== */
 .el-table {
   background-color: transparent !important;
+  width: 100%;
 }
 
 .el-table__header th {
   background-color: var(--bg-hover) !important;
   color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
 }
 
 .el-table__body tr {
   background-color: transparent !important;
 }
 
+/* 移除斑马纹 */
+.el-table__body tr.el-table__row--striped {
+  background-color: transparent !important;
+}
+
 .el-table__body tr:hover > td {
-  background-color: rgba(0, 212, 255, 0.05) !important;
+  background-color: rgba(0, 212, 255, 0.08) !important;
 }
 
 .el-table__body td {
   color: var(--text-primary) !important;
+  border-bottom: 1px solid rgba(42, 63, 95, 0.3) !important;
 }
 
 /* ==================== 响应式 ==================== */
