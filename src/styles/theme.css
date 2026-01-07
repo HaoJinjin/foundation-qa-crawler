@@ -1,0 +1,429 @@
+/* ==================== 暗色科技主题 CSS ==================== */
+
+:root {
+  /* ===== 主色系 ===== */
+  --primary-color: #00d4ff;
+  --primary-dark: #0066cc;
+  --primary-light: #33deff;
+
+  /* ===== 背景色 ===== */
+  --bg-primary: #0a0e27;
+  --bg-secondary: #0f1419;
+  --bg-tertiary: #16213e;
+  --bg-hover: #1a1f3a;
+
+  /* ===== 文字色 ===== */
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+  --text-accent: #00d4ff;
+
+  /* ===== 状态色 ===== */
+  --success-color: #52c41a;
+  --warning-color: #faad14;
+  --danger-color: #ff4d4f;
+  --info-color: #1890ff;
+
+  /* ===== 边框色 ===== */
+  --border-color: #2a3f5f;
+  --border-light: #1a2332;
+  --border-primary: #00d4ff;
+
+  /* ===== 阴影 ===== */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.1);
+  --shadow-glow-strong: 0 0 30px rgba(0, 212, 255, 0.3);
+
+  /* ===== 圆角 ===== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* ===== 间距 ===== */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 24px;
+
+  /* ===== 过渡 ===== */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ==================== 全局样式 ==================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* ==================== 滚动条美化 ==================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* ==================== 标题样式 ==================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: 28px;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+h2 {
+  font-size: 24px;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+h3 {
+  font-size: 20px;
+  color: var(--text-primary);
+}
+
+/* ==================== 按钮样式 ==================== */
+
+button, .el-button {
+  transition: all var(--transition-base);
+}
+
+.el-button--primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--bg-primary) !important;
+  font-weight: 600;
+}
+
+.el-button--primary:hover {
+  background-color: var(--primary-light) !important;
+  border-color: var(--primary-light) !important;
+  box-shadow: var(--shadow-glow-strong);
+  transform: translateY(-2px);
+}
+
+.el-button--success {
+  background-color: var(--success-color) !important;
+}
+
+.el-button--danger {
+  background-color: var(--danger-color) !important;
+}
+
+/* ==================== 输入框样式 ==================== */
+
+.el-input__wrapper {
+  background-color: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.el-input__inner {
+  color: var(--text-primary) !important;
+  background-color: transparent;
+}
+
+.el-input__inner::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.el-input__wrapper:hover {
+  border-color: var(--primary-color) !important;
+}
+
+/* ==================== 表格样式 ==================== */
+
+.el-table {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.el-table__header tr {
+  background-color: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.el-table__header th {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.el-table__body tr {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.el-table__body tr:hover > td {
+  background-color: var(--bg-hover) !important;
+}
+
+.el-table__body td {
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* ==================== 卡片样式 ==================== */
+
+.card {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-hover) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.card--primary {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ==================== KPI卡片 ==================== */
+
+.kpi-card {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-hover) 100%);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-glow);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.kpi-card:hover {
+  box-shadow: var(--shadow-glow-strong);
+  transform: translateY(-5px);
+  border-color: var(--primary-light);
+}
+
+.kpi-label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-md);
+}
+
+.kpi-value {
+  color: var(--primary-color);
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.kpi-change {
+  color: var(--success-color);
+  font-size: 12px;
+  margin-top: var(--spacing-sm);
+}
+
+.kpi-change.negative {
+  color: var(--danger-color);
+}
+
+/* ==================== 进度条 ==================== */
+
+.el-progress__bar {
+  background-color: var(--primary-color) !important;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* ==================== 提示框 ==================== */
+
+.el-alert {
+  background-color: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.el-alert--success {
+  background-color: rgba(82, 196, 26, 0.1) !important;
+  border-color: var(--success-color) !important;
+}
+
+.el-alert--danger {
+  background-color: rgba(255, 77, 79, 0.1) !important;
+  border-color: var(--danger-color) !important;
+}
+
+.el-alert--warning {
+  background-color: rgba(250, 173, 20, 0.1) !important;
+  border-color: var(--warning-color) !important;
+}
+
+/* ==================== 对话框 ==================== */
+
+.el-dialog {
+  --el-dialog-bg-color: var(--bg-secondary);
+  --el-dialog-border-color: var(--border-color);
+}
+
+.el-dialog__header {
+  border-bottom-color: var(--border-color) !important;
+}
+
+.el-dialog__title {
+  color: var(--primary-color) !important;
+}
+
+/* ==================== 下拉菜单 ==================== */
+
+.el-popper {
+  background-color: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.el-dropdown-menu {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.el-dropdown-menu__item {
+  color: var(--text-primary) !important;
+}
+
+.el-dropdown-menu__item:hover {
+  background-color: var(--bg-hover) !important;
+  color: var(--primary-color) !important;
+}
+
+/* ==================== 选项卡 ==================== */
+
+.el-tabs {
+  --el-border-color: var(--border-color);
+}
+
+.el-tabs__nav-prev, .el-tabs__nav-next {
+  color: var(--text-secondary) !important;
+}
+
+.el-tabs__nav-prev:hover, .el-tabs__nav-next:hover {
+  color: var(--primary-color) !important;
+}
+
+.el-tab-pane {
+  color: var(--text-primary) !important;
+}
+
+/* ==================== 加载动画 ==================== */
+
+.el-loading-mask {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.el-loading-spinner .circular circle {
+  stroke: var(--primary-color) !important;
+}
+
+/* ==================== 骨架屏 ==================== */
+
+.el-skeleton__item {
+  background-color: var(--bg-hover) !important;
+}
+
+/* ==================== 分页 ==================== */
+
+.el-pagination {
+  --el-text-color-regular: var(--text-primary);
+}
+
+.el-pager li {
+  color: var(--text-primary) !important;
+}
+
+.el-pager li:hover {
+  color: var(--primary-color) !important;
+}
+
+.el-pager li.active {
+  color: var(--primary-color) !important;
+  font-weight: bold;
+}
+
+/* ==================== 工具类 ==================== */
+
+.glow-text {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.glow-border {
+  border-color: var(--primary-color) !important;
+  box-shadow: var(--shadow-glow);
+}
+
+.transition-smooth {
+  transition: all var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+}
+
+.glass-morphism {
+  background: rgba(15, 20, 25, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+/* ==================== 响应式 ==================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .kpi-value {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: var(--spacing-md);
+  }
+}

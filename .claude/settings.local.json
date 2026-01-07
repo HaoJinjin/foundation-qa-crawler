@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(ls -la \"C:\\Users\\xxl\\Desktop\\fincialDataShow\\src\\stores\"\" && ls -la \"C:UsersxxlDesktopfincialDataShowsrcrouter\"\")",
+      "Bash(ls -la \"C:\\Users\\xxl\\Desktop\\fincialDataShow\\src\\pages\"\" && ls -la \"C:UsersxxlDesktopfincialDataShowsrcstyles\"\")",
+      "Bash(test ! -d \"C:\\Users\\xxl\\Desktop\\fincialDataShow\\frontend\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
