@@ -1,0 +1,762 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>天工开物问答站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" />
+    <meta name="description" content="" data-rh="true" />
+    <meta name="generator" content="Answer 1.2.0 - https://github.com/answerdev/answer version 3e6a202">
+    
+
+    <link rel="canonical" href="http://answer.chancefoundation.org.cn" />
+    <link rel="manifest" href="/manifest.json" />
+    <link href="/static/css/main.87dcd053.css" rel="stylesheet" />
+    <link href="/custom.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon.ico"
+      data-rh="true"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href=""
+      data-rh="true"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href=""
+      data-rh="true"
+    />
+    <script defer="defer" src="/static/js/main.4b6b4f30.js"></script>
+    
+  </head>
+
+  <body>
+    <div id="root">
+
+      <div id="spin-mask">
+        <noscript>
+          <style>
+            #spin-mask {
+              display: none !important;
+            }
+
+            #protect-browser {
+              display: none;
+            }
+          </style>
+        </noscript>
+        <style>
+          @keyframes _doc-spin {
+            to { transform: rotate(360deg) }
+          }
+          #spin-mask {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            z-index: 9999;
+          }
+          #spin-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          #spin-container .spinner {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            vertical-align: -.125em;
+            border: .25rem solid currentColor;
+            border-right-color: transparent;
+            color: rgba(108, 117, 125, .75);
+            border-radius: 50%;
+            animation: 0.75s linear infinite _doc-spin;
+          }
+
+          #protect-browser {
+            padding: 20px;
+            text-align: center;
+          }
+        </style>
+        <div id="spin-container">
+          <div class="spinner"></div>
+        </div>
+        <div id="protect-browser"></div>
+      </div>
+
+      <nav id="header" class="sticky-top navbar navbar-expand-lg navbar-dark">
+        <div class="d-flex align-items-center container">
+          <button
+            aria-controls="navBarContent"
+            id="navBarToggle"
+            type="button"
+            aria-label="Toggle navigation"
+            class="answer-navBar me-2 navbar-toggler collapsed"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="d-flex justify-content-between align-items-center nav-grow flex-nowrap"
+          >
+            <a class="lh-1 me-0 me-sm-3 navbar-brand" href="/">
+              天工开物问答站
+            </a>
+          </div>
+          <div class="me-auto navbar-collapse collapse" id="navBarContent">
+            <hr class="hr lg-none mb-2" style="margin-top: 12px" />
+            <div class="col-md-4">
+              <div class="navbar-nav">
+                <a class="nav-link" href="/questions"
+                  >Questions</a
+                >
+                <a class="nav-link" href="/tags"
+                  >Tags</a
+                >
+              </div>
+            </div>
+            <hr class="hr lg-none mt-2" />
+          </div>
+        </div>
+      </nav>
+      <div class="position-relative page-wrap">
+<div class="pt-4 mt-2 mb-5 container">
+  <div class="justify-content-center row">
+    <div class="col-xxl-7 col-lg-8 col-sm-12">
+      <div>
+        <div class="mb-3 d-flex flex-wrap justify-content-between">
+          <h5 class="fs-5 text-nowrap mb-3 mb-md-0">
+            All Questions
+          </h5>
+        </div>
+        <div class="border-top border-bottom-0 list-group list-group-flush">
+          
+          <div class="border-bottom pt-3 pb-2 px-0 list-group-item">
+            <h5 class="text-wrap text-break">
+              
+              <a class="link-dark" href="/questions/10010000000000098/qing-wen-zai-zui-xin-de-kai-yuan-ji-li-ji-hua-zhong-2025-nian-11-yue-fa-bu-ru-he-li-jie-kai-yuan-gong-xian-pr-shu-zhe-ge-gai-nian"
+                >请问在最新的开源激励计划中（2025年11月发布），如何理解开源贡献pr数这个概念？</a
+              >
+              
+            </h5>
+            <div
+              class="d-flex flex-column flex-md-row align-items-md-center small text-secondary"
+            >
+              <div class="d-flex">
+                <div class="text-secondary me-1">
+                  <a href="/users/hanqinwu"
+                    ><span class="me-1 text-break"
+                      >HanqinWu</span
+                    ></a
+                  ><span class="fw-bold" title="Reputation"
+                    >3</span
+                  >
+                </div>
+                <time
+                  class="text-secondary ms-1"
+                  datetime="2025-12-02T08:07:28.000Z"
+                  title="Dec 2, 2025 at 08:07"
+                  >asked
+                  Dec 2, 2025
+                </time>
+              </div>
+              <div class="ms-0 ms-md-3 mt-2 mt-md-0">
+                <span
+                  ><i class="br bi-hand-thumbs-up-fill"></i
+                  ><em class="fst-normal ms-1">0</em></span
+                >
+                <span class="ms-3"
+                  ><i class="br bi-chat-square-text-fill"></i
+                  ><em class="fst-normal ms-1">1</em></span
+                >
+                <span class="summary-stat ms-3"
+                  ><i class="br bi-eye-fill"></i
+                  ><em class="fst-normal ms-1">32</em></span
+                >
+              </div>
+            </div>
+            <div class="question-tags mx-n1 mt-2">
+              
+              <a
+                href="/tags/%e5%bc%80%e6%ba%90%e6%bf%80%e5%8a%b1%e8%ae%a1%e5%88%92"
+                class="badge-tag rounded-1   m-1"
+              >
+                <span class="">开源激励计划</span>
+              </a>
+              
+            </div>
+          </div>
+          
+          <div class="border-bottom pt-3 pb-2 px-0 list-group-item">
+            <h5 class="text-wrap text-break">
+              
+              <a class="link-dark" href="/questions/10010000000000096/dui-yu-gong-ye-ji-bie-de-ruan-jian-shi-gu-li-shi-yong-kai-yuan-ruan-jian-hai-shi-fan-dui-shi-yong-kai-yuan-ruan-jian"
+                >对于工业级别的软件，是鼓励使用开源软件还是反对使用开源软件？</a
+              >
+              
+            </h5>
+            <div
+              class="d-flex flex-column flex-md-row align-items-md-center small text-secondary"
+            >
+              <div class="d-flex">
+                <div class="text-secondary me-1">
+                  <a href="/users/hanqinwu"
+                    ><span class="me-1 text-break"
+                      >HanqinWu</span
+                    ></a
+                  ><span class="fw-bold" title="Reputation"
+                    >3</span
+                  >
+                </div>
+                <time
+                  class="text-secondary ms-1"
+                  datetime="2025-11-19T03:37:12.000Z"
+                  title="Nov 19, 2025 at 03:37"
+                  >asked
+                  Nov 19, 2025
+                </time>
+              </div>
+              <div class="ms-0 ms-md-3 mt-2 mt-md-0">
+                <span
+                  ><i class="br bi-hand-thumbs-up-fill"></i
+                  ><em class="fst-normal ms-1">0</em></span
+                >
+                <span class="ms-3"
+                  ><i class="br bi-chat-square-text-fill"></i
+                  ><em class="fst-normal ms-1">1</em></span
+                >
+                <span class="summary-stat ms-3"
+                  ><i class="br bi-eye-fill"></i
+                  ><em class="fst-normal ms-1">8</em></span
+                >
+              </div>
+            </div>
+            <div class="question-tags mx-n1 mt-2">
+              
+              <a
+                href="/tags/%e5%bc%80%e6%ba%90%e8%ae%b8%e5%8f%af%e8%af%81"
+                class="badge-tag rounded-1   m-1"
+              >
+                <span class="">开源许可证</span>
+              </a>
+              
+            </div>
+          </div>
+          
+          <div class="border-bottom pt-3 pb-2 px-0 list-group-item">
+            <h5 class="text-wrap text-break">
+              
+              <a class="link-dark" href="/questions/10010000000000094/zui-jin-you-you-guan-tian-gong-kai-wu-ji-jin-hui-cheng-li-gong-ye-ruan-jian-wei-yuan-hui-de-dong-tai-ma-bao-kuo-xiang-guan-xin-xi-ye-xing"
+                >最近有有关天工开物基金会成立工业软件委员会的动态吗？包括相关信息也行。</a
+              >
+              
+            </h5>
+            <div
+              class="d-flex flex-column flex-md-row align-items-md-center small text-secondary"
+            >
+              <div class="d-flex">
+                <div class="text-secondary me-1">
+                  <a href="/users/hanqinwu"
+                    ><span class="me-1 text-break"
+                      >HanqinWu</span
+                    ></a
+                  ><span class="fw-bold" title="Reputation"
+                    >3</span
+                  >
+                </div>
+                <time
+                  class="text-secondary ms-1"
+                  datetime="2025-11-02T06:31:10.000Z"
+                  title="Nov 2, 2025 at 06:31"
+                  >asked
+                  Nov 2, 2025
+                </time>
+              </div>
+              <div class="ms-0 ms-md-3 mt-2 mt-md-0">
+                <span
+                  ><i class="br bi-hand-thumbs-up-fill"></i
+                  ><em class="fst-normal ms-1">0</em></span
+                >
+                <span class="ms-3"
+                  ><i class="br bi-chat-square-text-fill"></i
+                  ><em class="fst-normal ms-1">1</em></span
+                >
+                <span class="summary-stat ms-3"
+                  ><i class="br bi-eye-fill"></i
+                  ><em class="fst-normal ms-1">8</em></span
+                >
+              </div>
+            </div>
+            <div class="question-tags mx-n1 mt-2">
+              
+              <a
+                href="/tags/%e5%9f%ba%e9%87%91%e4%bc%9a%e6%b4%bb%e5%8a%a8"
+                class="badge-tag rounded-1   m-1"
+              >
+                <span class="">基金会活动</span>
+              </a>
+              
+            </div>
+          </div>
+          
+          <div class="border-bottom pt-3 pb-2 px-0 list-group-item">
+            <h5 class="text-wrap text-break">
+              
+              <a class="link-dark" href="/questions/10010000000000092/qing-wen-ji-jin-hui-zhe-bian-you-mei-you-xiang-mu-zai-zhao-ren-zuo-xiang-can-yu-yi-xie-kai-yuan-xiang-mu"
+                >请问基金会这边有没有项目在招人做？想参与一些开源项目</a
+              >
+              
+            </h5>
+            <div
+              class="d-flex flex-column flex-md-row align-items-md-center small text-secondary"
+            >
+              <div class="d-flex">
+                <div class="text-secondary me-1">
+                  <a href="/users/hanqinwu"
+                    ><span class="me-1 text-break"
+                      >HanqinWu</span
+                    ></a
+                  ><span class="fw-bold" title="Reputation"
+                    >3</span
+                  >
+                </div>
+                <time
+                  class="text-secondary ms-1"
+                  datetime="2025-11-02T06:28:46.000Z"
+                  title="Nov 2, 2025 at 06:28"
+                  >asked
+                  Nov 2, 2025
+                </time>
+              </div>
+              <div class="ms-0 ms-md-3 mt-2 mt-md-0">
+                <span
+                  ><i class="br bi-hand-thumbs-up-fill"></i
+                  ><em class="fst-normal ms-1">0</em></span
+                >
+                <span class="ms-3"
+                  ><i class="br bi-chat-square-text-fill"></i
+                  ><em class="fst-normal ms-1">1</em></span
+                >
+                <span class="summary-stat ms-3"
+                  ><i class="br bi-eye-fill"></i
+                  ><em class="fst-normal ms-1">9</em></span
+                >
+              </div>
+            </div>
+            <div class="question-tags mx-n1 mt-2">
+              
+              <a
+                href="/tags/%e5%bc%80%e6%ba%90%e6%95%99%e8%82%b2"
+                class="badge-tag rounded-1   m-1"
+              >
+                <span class="">开源教育</span>
+              </a>
+              
+            </div>
+          </div>
+          
+          <div class="border-bottom pt-3 pb-2 px-0 list-group-item">
+            <h5 class="text-wrap text-break">
+              
+              <a class="link-dark" href="/questions/10010000000000090/yi-ge-qi-ye-yao-cheng-li-ospo-ru-guo-mei-you-shuo-yao-kai-fang-yuan-dai-ma-hai-xu-yao-cheng-li-ospo-ma"
+                >一个企业要成立ospo，如果没有说要开放源代码，还需要成立ospo吗？</a
+              >
+              
+            </h5>
+            <div
+              class="d-flex flex-column flex-md-row align-items-md-center small text-secondary"
+            >
+              <div class="d-flex">
+                <div class="text-secondary me-1">
+                  <a href="/users/hanqinwu"
+                    ><span class="me-1 text-break"
+                      >HanqinWu</span
+                    ></a
+                  ><span class="fw-bold" title="Reputation"
+                    >3</span
+                  >
+                </div>
+                <time
+                  class="text-secondary ms-1"
+                  datetime="2025-11-01T06:22:59.000Z"
+                  title="Nov 1, 2025 at 06:22"
+                  >asked
+                  Nov 1, 2025
+                </time>
+              </div>
+              <div class="ms-0 ms-md-3 mt-2 mt-md-0">
+                <span
+                  ><i class="br bi-hand-thumbs-up-fill"></i
+                  ><em class="fst-normal ms-1">0</em></span
+                >
+                <span class="ms-3"
+                  ><i class="br bi-chat-square-text-fill"></i
+                  ><em class="fst-normal ms-1">1</em></span
+                >
+                <span class="summary-stat ms-3"
+                  ><i class="br bi-eye-fill"></i
+                  ><em class="fst-normal ms-1">4</em></span
+                >
+              </div>
+            </div>
+            <div class="question-tags mx-n1 mt-2">
+              
+              <a
+                href="/tags/%e5%bc%80%e6%ba%90%e6%b3%95%e8%a7%84"
+                class="badge-tag rounded-1   m-1"
+              >
+                <span class="">开源法规</span>
+              </a>
+              
+            </div>
+          </div>
+          
+          <div class="border-bottom pt-3 pb-2 px-0 list-group-item">
+            <h5 class="text-wrap text-break">
+              
+              <a class="link-dark" href="/questions/10010000000000088/dui-dai-gan-xing-qu-de-kai-yuan-xiang-mu-chan-pin-you-yu-ben-shen-bi-jiao-nan-wo-mei-you-fen-bian-yi-xie-ji-shu-xi-jie-neng-li-qing-wen-zen-me-qu-xue-"
+                >对待感兴趣的开源项目（产品），由于本身比较难，我没有分辨一些技术细节能力，请问怎么去学习他们？我怕被类似的开源项目人云亦云。</a
+              >
+              
+            </h5>
+            <div
+              class="d-flex flex-column flex-md-row align-items-md-center small text-secondary"
+            >
+              <div class="d-flex">
+                <div class="text-secondary me-1">
+                  <a href="/users/hanqinwu"
+                    ><span class="me-1 text-break"
+                      >HanqinWu</span
+                    ></a
+                  ><span class="fw-bold" title="Reputation"
+                    >3</span
+                  >
+                </div>
+                <time
+                  class="text-secondary ms-1"
+                  datetime="2025-10-27T13:20:24.000Z"
+                  title="Oct 27, 2025 at 13:20"
+                  >asked
+                  Oct 27, 2025
+                </time>
+              </div>
+              <div class="ms-0 ms-md-3 mt-2 mt-md-0">
+                <span
+                  ><i class="br bi-hand-thumbs-up-fill"></i
+                  ><em class="fst-normal ms-1">0</em></span
+                >
+                <span class="ms-3"
+                  ><i class="br bi-chat-square-text-fill"></i
+                  ><em class="fst-normal ms-1">1</em></span
+                >
+                <span class="summary-stat ms-3"
+                  ><i class="br bi-eye-fill"></i
+                  ><em class="fst-normal ms-1">5</em></span
+                >
+              </div>
+            </div>
+            <div class="question-tags mx-n1 mt-2">
+              
+              <a
+                href="/tags/%e5%bc%80%e6%ba%90%e6%95%99%e8%82%b2"
+                class="badge-tag rounded-1   m-1"
+              >
+                <span class="">开源教育</span>
+              </a>
+              
+            </div>
+          </div>
+          
+          <div class="border-bottom pt-3 pb-2 px-0 list-group-item">
+            <h5 class="text-wrap text-break">
+              
+              <a class="link-dark" href="/questions/10010000000000083/ru-he-cheng-li-yi-ge-xin-de-sig-wo-men-zen-me-qu-yun-zuo-sig"
+                >如何成立一个新的SIG，我们怎么去运作SIG？</a
+              >
+              
+            </h5>
+            <div
+              class="d-flex flex-column flex-md-row align-items-md-center small text-secondary"
+            >
+              <div class="d-flex">
+                <div class="text-secondary me-1">
+                  <a href="/users/hanqinwu"
+                    ><span class="me-1 text-break"
+                      >HanqinWu</span
+                    ></a
+                  ><span class="fw-bold" title="Reputation"
+                    >3</span
+                  >
+                </div>
+                <time
+                  class="text-secondary ms-1"
+                  datetime="2025-10-27T12:53:59.000Z"
+                  title="Oct 27, 2025 at 12:53"
+                  >asked
+                  Oct 27, 2025
+                </time>
+              </div>
+              <div class="ms-0 ms-md-3 mt-2 mt-md-0">
+                <span
+                  ><i class="br bi-hand-thumbs-up-fill"></i
+                  ><em class="fst-normal ms-1">0</em></span
+                >
+                <span class="ms-3"
+                  ><i class="br bi-chat-square-text-fill"></i
+                  ><em class="fst-normal ms-1">1</em></span
+                >
+                <span class="summary-stat ms-3"
+                  ><i class="br bi-eye-fill"></i
+                  ><em class="fst-normal ms-1">2</em></span
+                >
+              </div>
+            </div>
+            <div class="question-tags mx-n1 mt-2">
+              
+              <a
+                href="/tags/%e5%bc%80%e6%ba%90%e6%95%99%e8%82%b2"
+                class="badge-tag rounded-1   m-1"
+              >
+                <span class="">开源教育</span>
+              </a>
+              
+            </div>
+          </div>
+          
+          <div class="border-bottom pt-3 pb-2 px-0 list-group-item">
+            <h5 class="text-wrap text-break">
+              
+              <a class="link-dark" href="/questions/10010000000000082/shen-me-shi-kai-fa-zhe-xing-wei-shu-ju-dong-cha-opendigger-neng-bu-neng-zuo-zhe-ge-shi-qing-qi-ye-she-qu-neng-gou-yong-zhe-ge-shu-ju-zuo-shen-me-neng-"
+                >什么是开发者行为数据洞察，opendigger能不能做这个事情，企业社区能够用这个数据做什么？能给开源教育什么启示？</a
+              >
+              
+            </h5>
+            <div
+              class="d-flex flex-column flex-md-row align-items-md-center small text-secondary"
+            >
+              <div class="d-flex">
+                <div class="text-secondary me-1">
+                  <a href="/users/hanqinwu"
+                    ><span class="me-1 text-break"
+                      >HanqinWu</span
+                    ></a
+                  ><span class="fw-bold" title="Reputation"
+                    >3</span
+                  >
+                </div>
+                <time
+                  class="text-secondary ms-1"
+                  datetime="2025-10-27T12:53:08.000Z"
+                  title="Oct 27, 2025 at 12:53"
+                  >asked
+                  Oct 27, 2025
+                </time>
+              </div>
+              <div class="ms-0 ms-md-3 mt-2 mt-md-0">
+                <span
+                  ><i class="br bi-hand-thumbs-up-fill"></i
+                  ><em class="fst-normal ms-1">0</em></span
+                >
+                <span class="ms-3"
+                  ><i class="br bi-chat-square-text-fill"></i
+                  ><em class="fst-normal ms-1">1</em></span
+                >
+                <span class="summary-stat ms-3"
+                  ><i class="br bi-eye-fill"></i
+                  ><em class="fst-normal ms-1">4</em></span
+                >
+              </div>
+            </div>
+            <div class="question-tags mx-n1 mt-2">
+              
+              <a
+                href="/tags/%e5%bc%80%e6%ba%90%e6%95%99%e8%82%b2"
+                class="badge-tag rounded-1   m-1"
+              >
+                <span class="">开源教育</span>
+              </a>
+              
+            </div>
+          </div>
+          
+          <div class="border-bottom pt-3 pb-2 px-0 list-group-item">
+            <h5 class="text-wrap text-break">
+              
+              <a class="link-dark" href="/questions/10010000000000080/discuss-jiu-2025-nian-nuo-bei-er-jing-ji-xue-jiang-ti-wen-qing-wen-shi-chuang-xin-qu-dong-he-jing-ji-zeng-zhang-de-guan-xi-shi-shen-me"
+                >discuss:就2025年诺贝尔经济学奖提问，请问是创新驱动和经济增长的关系是什么？</a
+              >
+              
+            </h5>
+            <div
+              class="d-flex flex-column flex-md-row align-items-md-center small text-secondary"
+            >
+              <div class="d-flex">
+                <div class="text-secondary me-1">
+                  <a href="/users/hanqinwu"
+                    ><span class="me-1 text-break"
+                      >HanqinWu</span
+                    ></a
+                  ><span class="fw-bold" title="Reputation"
+                    >3</span
+                  >
+                </div>
+                <time
+                  class="text-secondary ms-1"
+                  datetime="2025-10-27T12:51:35.000Z"
+                  title="Oct 27, 2025 at 12:51"
+                  >asked
+                  Oct 27, 2025
+                </time>
+              </div>
+              <div class="ms-0 ms-md-3 mt-2 mt-md-0">
+                <span
+                  ><i class="br bi-hand-thumbs-up-fill"></i
+                  ><em class="fst-normal ms-1">0</em></span
+                >
+                <span class="ms-3"
+                  ><i class="br bi-chat-square-text-fill"></i
+                  ><em class="fst-normal ms-1">1</em></span
+                >
+                <span class="summary-stat ms-3"
+                  ><i class="br bi-eye-fill"></i
+                  ><em class="fst-normal ms-1">5</em></span
+                >
+              </div>
+            </div>
+            <div class="question-tags mx-n1 mt-2">
+              
+              <a
+                href="/tags/%e5%bc%80%e6%ba%90%e7%83%ad%e7%82%b9%e9%97%ae%e9%a2%98"
+                class="badge-tag rounded-1   m-1"
+              >
+                <span class="">开源热点问题</span>
+              </a>
+              
+            </div>
+          </div>
+          
+          <div class="border-bottom pt-3 pb-2 px-0 list-group-item">
+            <h5 class="text-wrap text-break">
+              
+              <a class="link-dark" href="/questions/10010000000000079/shen-me-shi-sig-zai-xue-xiao-mei-you-xiang-guan-zheng-ce-ji-li-de-qing-kuang-xia-zen-me-xian-qu-zuo-zhe-ge-kai-yuan-de-sheng-tai"
+                >什么是SIG，在学校没有相关政策激励的情况下，怎么先去做这个开源的生态？</a
+              >
+              
+            </h5>
+            <div
+              class="d-flex flex-column flex-md-row align-items-md-center small text-secondary"
+            >
+              <div class="d-flex">
+                <div class="text-secondary me-1">
+                  <a href="/users/hanqinwu"
+                    ><span class="me-1 text-break"
+                      >HanqinWu</span
+                    ></a
+                  ><span class="fw-bold" title="Reputation"
+                    >3</span
+                  >
+                </div>
+                <time
+                  class="text-secondary ms-1"
+                  datetime="2025-10-27T12:49:37.000Z"
+                  title="Oct 27, 2025 at 12:49"
+                  >asked
+                  Oct 27, 2025
+                </time>
+              </div>
+              <div class="ms-0 ms-md-3 mt-2 mt-md-0">
+                <span
+                  ><i class="br bi-hand-thumbs-up-fill"></i
+                  ><em class="fst-normal ms-1">0</em></span
+                >
+                <span class="ms-3"
+                  ><i class="br bi-chat-square-text-fill"></i
+                  ><em class="fst-normal ms-1">1</em></span
+                >
+                <span class="summary-stat ms-3"
+                  ><i class="br bi-eye-fill"></i
+                  ><em class="fst-normal ms-1">8</em></span
+                >
+              </div>
+            </div>
+            <div class="question-tags mx-n1 mt-2">
+              
+              <a
+                href="/tags/%e5%bc%80%e6%ba%90%e6%95%99%e8%82%b2"
+                class="badge-tag rounded-1   m-1"
+              >
+                <span class="">开源教育</span>
+              </a>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="mt-4 mb-2 d-flex justify-content-center">
+          
+<ul class="d-inline-flex mb-0 pagination pagination-sm">
+  
+  
+  
+  <li class="page-item active">
+    <span class="page-link" href="questions?page=1">1
+      <span class="visually-hidden">(current)</span>
+    </span>
+  </li>
+  
+  
+  
+  <li class="page-item">
+    <a class="page-link" href="questions?page=2">2</a>
+  </li>
+  
+  
+  
+  <li class="page-item">
+    <a class="page-link" href="questions?page=3">3</a>
+  </li>
+  
+  
+  
+  <li class="page-item">
+    <a class="page-link" href="questions?page=4">4</a>
+  </li>
+  
+  
+  
+  <li class="page-item">
+    <a class="page-link" href="questions?page=2"><span aria-hidden="true">Next</span><span
+        class="visually-hidden">Next</span></a>
+  </li>
+  
+</ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 mt-lg-0 col-xxl-3 col-lg-4 col-sm-12"></div>
+  </div>
+</div>
+
+</div>
+        <footer class="bg-light py-3">
+            <div class="container">
+                <p class="text-center mb-0 small text-secondary">
+                  Built on <a href="https://answer.dev/" target="_blank"> Answer </a>- the open-source software that powers Q&A communities.<br />Made with love © 2026 天工开物问答站.
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+天工开物问答站数据分析报告
+============================================================
+生成时间: 2026-01-07 16:30:28.387135
+数据来源: https://answer.chancefoundation.org.cn/
+总问题数: 10
+总浏览数: 85
+总点赞数: 0
+总回答数: 10
+
+热门问题:
+1. 请问在最新的开源激励计划中（2025年11月发布），如何理解开源贡献pr数这个概念？
+   浏览: 32, 点赞: 0, 回答: 1, 时间: Dec 2, 2025
+2. 请问基金会这边有没有项目在招人做？想参与一些开源项目
+   浏览: 9, 点赞: 0, 回答: 1, 时间: Nov 2, 2025
+3. 对于工业级别的软件，是鼓励使用开源软件还是反对使用开源软件？
+   浏览: 8, 点赞: 0, 回答: 1, 时间: Nov 19, 2025
+4. 最近有有关天工开物基金会成立工业软件委员会的动态吗？包括相关信息也行。
+   浏览: 8, 点赞: 0, 回答: 1, 时间: Nov 2, 2025
+5. 什么是SIG，在学校没有相关政策激励的情况下，怎么先去做这个开源的生态？
+   浏览: 8, 点赞: 0, 回答: 1, 时间: Oct 27, 2025
+
+详细数据:
+             问题ID                                                             标题     提问用户  用户声望         提问时间                     精确时间  点赞数  回答数  浏览数     标签                                                                                                                                                                                                                      问题链接                                                  用户链接       月份
+10010000000000098                     请问在最新的开源激励计划中（2025年11月发布），如何理解开源贡献pr数这个概念？ HanqinWu     3  Dec 2, 2025 2025-12-02T08:07:28.000Z    0    1   32 开源激励计划                      https://answer.chancefoundation.org.cn/questions/10010000000000098/qing-wen-zai-zui-xin-de-kai-yuan-ji-li-ji-hua-zhong-2025-nian-11-yue-fa-bu-ru-he-li-jie-kai-yuan-gong-xian-pr-shu-zhe-ge-gai-nian https://answer.chancefoundation.org.cn/users/hanqinwu Dec 2025
+10010000000000096                                 对于工业级别的软件，是鼓励使用开源软件还是反对使用开源软件？ HanqinWu     3 Nov 19, 2025 2025-11-19T03:37:12.000Z    0    1    8  开源许可证                                   https://answer.chancefoundation.org.cn/questions/10010000000000096/dui-yu-gong-ye-ji-bie-de-ruan-jian-shi-gu-li-shi-yong-kai-yuan-ruan-jian-hai-shi-fan-dui-shi-yong-kai-yuan-ruan-jian https://answer.chancefoundation.org.cn/users/hanqinwu Nov 2025
+10010000000000094                            最近有有关天工开物基金会成立工业软件委员会的动态吗？包括相关信息也行。 HanqinWu     3  Nov 2, 2025 2025-11-02T06:31:10.000Z    0    1    8  基金会活动              https://answer.chancefoundation.org.cn/questions/10010000000000094/zui-jin-you-you-guan-tian-gong-kai-wu-ji-jin-hui-cheng-li-gong-ye-ruan-jian-wei-yuan-hui-de-dong-tai-ma-bao-kuo-xiang-guan-xin-xi-ye-xing https://answer.chancefoundation.org.cn/users/hanqinwu Nov 2025
+10010000000000092                                     请问基金会这边有没有项目在招人做？想参与一些开源项目 HanqinWu     3  Nov 2, 2025 2025-11-02T06:28:46.000Z    0    1    9   开源教育                                               https://answer.chancefoundation.org.cn/questions/10010000000000092/qing-wen-ji-jin-hui-zhe-bian-you-mei-you-xiang-mu-zai-zhao-ren-zuo-xiang-can-yu-yi-xie-kai-yuan-xiang-mu https://answer.chancefoundation.org.cn/users/hanqinwu Nov 2025
+10010000000000090                            一个企业要成立ospo，如果没有说要开放源代码，还需要成立ospo吗？ HanqinWu     3  Nov 1, 2025 2025-11-01T06:22:59.000Z    0    1    4   开源法规                                                 https://answer.chancefoundation.org.cn/questions/10010000000000090/yi-ge-qi-ye-yao-cheng-li-ospo-ru-guo-mei-you-shuo-yao-kai-fang-yuan-dai-ma-hai-xu-yao-cheng-li-ospo-ma https://answer.chancefoundation.org.cn/users/hanqinwu Nov 2025
+10010000000000088 对待感兴趣的开源项目（产品），由于本身比较难，我没有分辨一些技术细节能力，请问怎么去学习他们？我怕被类似的开源项目人云亦云。 HanqinWu     3 Oct 27, 2025 2025-10-27T13:20:24.000Z    0    1    5   开源教育 https://answer.chancefoundation.org.cn/questions/10010000000000088/dui-dai-gan-xing-qu-de-kai-yuan-xiang-mu-chan-pin-you-yu-ben-shen-bi-jiao-nan-wo-mei-you-fen-bian-yi-xie-ji-shu-xi-jie-neng-li-qing-wen-zen-me-qu-xue- https://answer.chancefoundation.org.cn/users/hanqinwu Oct 2025
+10010000000000083                                        如何成立一个新的SIG，我们怎么去运作SIG？ HanqinWu     3 Oct 27, 2025 2025-10-27T12:53:59.000Z    0    1    2   开源教育                                                                                           https://answer.chancefoundation.org.cn/questions/10010000000000083/ru-he-cheng-li-yi-ge-xin-de-sig-wo-men-zen-me-qu-yun-zuo-sig https://answer.chancefoundation.org.cn/users/hanqinwu Oct 2025
+10010000000000082     什么是开发者行为数据洞察，opendigger能不能做这个事情，企业社区能够用这个数据做什么？能给开源教育什么启示？ HanqinWu     3 Oct 27, 2025 2025-10-27T12:53:08.000Z    0    1    4   开源教育 https://answer.chancefoundation.org.cn/questions/10010000000000082/shen-me-shi-kai-fa-zhe-xing-wei-shu-ju-dong-cha-opendigger-neng-bu-neng-zuo-zhe-ge-shi-qing-qi-ye-she-qu-neng-gou-yong-zhe-ge-shu-ju-zuo-shen-me-neng- https://answer.chancefoundation.org.cn/users/hanqinwu Oct 2025
+10010000000000080                    discuss:就2025年诺贝尔经济学奖提问，请问是创新驱动和经济增长的关系是什么？ HanqinWu     3 Oct 27, 2025 2025-10-27T12:51:35.000Z    0    1    5 开源热点问题                 https://answer.chancefoundation.org.cn/questions/10010000000000080/discuss-jiu-2025-nian-nuo-bei-er-jing-ji-xue-jiang-ti-wen-qing-wen-shi-chuang-xin-qu-dong-he-jing-ji-zeng-zhang-de-guan-xi-shi-shen-me https://answer.chancefoundation.org.cn/users/hanqinwu Oct 2025
+10010000000000079                           什么是SIG，在学校没有相关政策激励的情况下，怎么先去做这个开源的生态？ HanqinWu     3 Oct 27, 2025 2025-10-27T12:49:37.000Z    0    1    8   开源教育                       https://answer.chancefoundation.org.cn/questions/10010000000000079/shen-me-shi-sig-zai-xue-xiao-mei-you-xiang-guan-zheng-ce-ji-li-de-qing-kuang-xia-zen-me-xian-qu-zuo-zhe-ge-kai-yuan-de-sheng-tai https://answer.chancefoundation.org.cn/users/hanqinwu Oct 2025
