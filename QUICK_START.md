@@ -97,8 +97,3 @@ npm install
 
 # 2. 启动开发服务器
 npm run dev
-
-# 输出应该显示：
-# VITE v... ready in ... ms
-# ➜  Local:   http://localhost:5173/
-```
