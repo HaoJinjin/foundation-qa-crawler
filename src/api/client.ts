@@ -190,12 +190,14 @@ class ApiClient {
    */
   async getDashboard(
     useCache: boolean = true,
-    cacheTtl: number = 3600
+    cacheTtl: number = 3600,
+    autoCrawl: boolean = true
   ): Promise<AxiosResponse<ApiResponse<DashboardData>>> {
     return this.client.get('/analysis/dashboard', {
       params: {
         use_cache: useCache,
         cache_ttl: cacheTtl,
+        auto_crawl: autoCrawl,
       },
     });
   }

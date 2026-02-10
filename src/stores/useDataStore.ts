@@ -137,6 +137,19 @@ export const useDataStore = defineStore('data', () => {
       if (response.data && response.data.data) {
         dashboardData.value = response.data.data;
         console.log('Dashboard数据加载成功', response.data.data);
+
+        // 检查是否正在自动爬取
+        if (response.data.data.auto_crawling && response.data.data.task_id) {
+          console.log('检测到自动爬虫正在运行，任务ID:', response.data.data.task_id);
+          // 设置爬虫状态
+          crawlerState.value.isRunning = true;
+          crawlerState.value.currentTaskId = response.data.data.task_id;
+          crawlerState.value.message = '自动爬虫正在运行，请稍候...';
+          crawlerState.value.progress = 0;
+
+          // 开始轮询自动爬虫的进度
+          await pollAutoCrawler();
+        }
       } else {
         throw new Error(response.data?.message || '获取Dashboard数据失败');
       }
@@ -334,6 +347,51 @@ export const useDataStore = defineStore('data', () => {
   }
 
   /**
+   * 轮询自动爬虫任务状态
+   */
+  async function pollAutoCrawler() {
+    if (!crawlerState.value.currentTaskId) {
+      console.error('没有有效的任务ID');
+      return;
+    }
+
+    try {
+      const finalTask = await apiClient.pollTaskStatus(
+        crawlerState.value.currentTaskId,
+        120,
+        2000,
+        (progress: number, message: string) => {
+          crawlerState.value.progress = progress;
+          crawlerState.value.message = message;
+          console.log(`自动爬虫进度: ${progress}% - ${message}`);
+        }
+      );
+
+      if (finalTask.status === 'completed') {
+        crawlerState.value.lastResult = finalTask.result;
+        console.log('自动爬虫完成，数据已保存');
+
+        // 重新加载所有数据
+        await refreshAllData();
+
+        // 显示成功消息
+        console.log('所有数据已刷新');
+      } else if (finalTask.status === 'failed') {
+        console.error(`自动爬虫执行失败: ${finalTask.error || '未知错误'}`);
+      } else if (finalTask.status === 'stopped') {
+        console.log('自动爬虫已停止');
+      }
+    } catch (error: any) {
+      console.error('自动爬虫轮询失败:', error);
+    } finally {
+      // 无论成功或失败，都要清除运行状态
+      crawlerState.value.isRunning = false;
+      crawlerState.value.progress = 0;
+      crawlerState.value.message = '';
+    }
+  }
+
+  /**
    * 停止爬虫
    */
   async function stopCrawler() {
@@ -357,8 +415,19 @@ export const useDataStore = defineStore('data', () => {
    */
   async function refreshAllData() {
     console.log('刷新所有数据...');
+
+    // 禁用自动爬虫，直接读取已有数据
+    try {
+      const response = await apiClient.getDashboard(false, 3600, false);
+      if (response.data && response.data.data) {
+        dashboardData.value = response.data.data;
+        console.log('Dashboard数据已刷新');
+      }
+    } catch (error) {
+      console.error('刷新Dashboard数据失败:', error);
+    }
+
     const promises = [
-      fetchDashboard(),
       fetchTrends(),
       fetchUsers(),
       fetchTags(),

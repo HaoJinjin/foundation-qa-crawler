@@ -7,6 +7,7 @@ import os
 import sys
 import json
 import asyncio
+import uuid
 from datetime import datetime, timedelta
 from typing import List, Dict, Optional
 from pathlib import Path
@@ -737,7 +738,8 @@ async def stop_crawler_task(task_id: str):
 @app.get("/api/v1/analysis/dashboard")
 async def get_dashboard_data(
     use_cache: bool = Query(True),
-    cache_ttl: int = Query(3600)
+    cache_ttl: int = Query(3600),
+    auto_crawl: bool = Query(True)
 ):
     """获取仪表板数据"""
     try:
@@ -762,13 +764,77 @@ async def get_dashboard_data(
         )
 
         if not json_files:
-            # 如果没有爬虫数据，返回空数据
-            data = {
-                "basic_stats": {},
-                "top_questions": [],
-                "top_users": [],
-                "top_tags": []
-            }
+            # 如果没有爬虫数据
+            if auto_crawl:
+                # 自动启动爬虫
+                logger.info("检测到没有数据文件，自动启动爬虫...")
+                task_id = f"auto_crawler_task_{uuid.uuid4().hex[:12]}"
+                auto_max_pages = 5  # 自动爬虫默认爬取5页
+                task_manager.create_task(task_id, auto_max_pages)
+
+                # 后台执行爬虫
+                async def run_auto_crawler():
+                    try:
+                        logger.info(f"自动爬虫任务开始: {task_id}")
+                        questions = await crawler.fetch_all_questions(max_pages=auto_max_pages, task_id=task_id)
+
+                        # 执行分析
+                        task_manager.update_progress(task_id, 100, "正在分析数据...")
+
+                        basic_stats = DataAnalyzer.analyze_basic_stats(questions)
+                        top_questions = DataAnalyzer.get_top_questions(questions, 10)
+                        top_users = DataAnalyzer.get_top_users(questions, 5)
+                        top_tags = DataAnalyzer.get_top_tags(questions, 15)
+
+                        result = {
+                            "total_questions": len(questions),
+                            "basic_stats": basic_stats,
+                            "top_questions": top_questions,
+                            "top_users": top_users,
+                            "top_tags": top_tags,
+                            "questions": questions,
+                            "completed_at": datetime.now().isoformat()
+                        }
+
+                        # 保存到本地JSON
+                        json_file = os.path.join(OUTPUT_DIR, f'crawler_result_{task_id}.json')
+                        with open(json_file, 'w', encoding='utf-8') as f:
+                            json.dump(result, f, ensure_ascii=False, indent=2)
+
+                        logger.info(f"自动爬虫数据已保存: {json_file}")
+                        task_manager.complete_task(task_id, result)
+
+                        # 清除缓存，强制下次请求读取新数据
+                        cache_manager.clear(cache_key)
+
+                    except Exception as e:
+                        logger.error(f"自动爬虫执行失败: {e}")
+                        task_manager.fail_task(task_id, str(e))
+
+                # 启动后台任务
+                asyncio.create_task(run_auto_crawler())
+
+                # 返回提示信息
+                return {
+                    "code": 202,
+                    "message": "暂无数据，已自动启动爬虫，请稍后刷新",
+                    "data": {
+                        "basic_stats": {},
+                        "top_questions": [],
+                        "top_users": [],
+                        "top_tags": [],
+                        "auto_crawling": True,
+                        "task_id": task_id
+                    }
+                }
+            else:
+                # 不自动爬取，返回空数据
+                data = {
+                    "basic_stats": {},
+                    "top_questions": [],
+                    "top_users": [],
+                    "top_tags": []
+                }
         else:
             # 读取最新的数据文件
             with open(os.path.join(OUTPUT_DIR, json_files[0]), 'r', encoding='utf-8') as f:
@@ -832,9 +898,9 @@ async def get_trends_data(
 
         if not json_files:
             return {
-                "code": 200,
-                "message": "暂无数据",
-                "data": {"data": []}
+                "code": 202,
+                "message": "暂无数据，请先启动爬虫或等待自动爬虫完成",
+                "data": {"data": [], "no_data": True}
             }
 
         with open(os.path.join(OUTPUT_DIR, json_files[0]), 'r', encoding='utf-8') as f:
@@ -891,9 +957,9 @@ async def get_users_analysis(
 
         if not json_files:
             return {
-                "code": 200,
-                "message": "暂无数据",
-                "data": {"users": []}
+                "code": 202,
+                "message": "暂无数据，请先启动爬虫或等待自动爬虫完成",
+                "data": {"users": [], "no_data": True}
             }
 
         with open(os.path.join(OUTPUT_DIR, json_files[0]), 'r', encoding='utf-8') as f:
@@ -949,9 +1015,9 @@ async def get_tags_analysis(
 
         if not json_files:
             return {
-                "code": 200,
-                "message": "暂无数据",
-                "data": {"tags": []}
+                "code": 202,
+                "message": "暂无数据，请先启动爬虫或等待自动爬虫完成",
+                "data": {"tags": [], "no_data": True}
             }
 
         with open(os.path.join(OUTPUT_DIR, json_files[0]), 'r', encoding='utf-8') as f:
@@ -1003,14 +1069,15 @@ async def get_questions_list(
 
         if not json_files:
             return {
-                "code": 200,
-                "message": "暂无数据",
+                "code": 202,
+                "message": "暂无数据，请先启动爬虫或等待自动爬虫完成",
                 "data": {
                     "total": 0,
                     "page": page,
                     "limit": limit,
                     "pages": 0,
-                    "questions": []
+                    "questions": [],
+                    "no_data": True
                 }
             }
 
