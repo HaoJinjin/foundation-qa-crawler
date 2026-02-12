@@ -1023,11 +1023,13 @@ async def get_tags_analysis(
         with open(os.path.join(OUTPUT_DIR, json_files[0]), 'r', encoding='utf-8') as f:
             crawler_result = json.load(f)
 
-        questions = crawler_result.get('questions', [])
-        tags = DataAnalyzer.get_top_tags(questions, limit)
+        # 直接使用 JSON 中已经计算好的 top_tags
+        all_tags = crawler_result.get('top_tags', [])
+        # 根据 limit 参数截取指定数量的标签
+        tags = all_tags[:limit] if limit else all_tags
 
         data = {
-            "total_tags": len(tags),
+            "total_tags": len(all_tags),
             "tags": tags
         }
 

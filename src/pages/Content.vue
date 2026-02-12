@@ -57,7 +57,7 @@
     </div>
 
     <!-- 标签统计 -->
-    <div class="card" v-if="!loading && tagsData">
+    <div class="card" id="tag-card" v-if="!loading && tagsData">
       <h2>📊 标签统计信息</h2>
       <div class="stats-grid">
         <div class="stat-box">
@@ -139,6 +139,9 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  padding: 20px;
 }
 
 /* ==================== 页面标题 ==================== */
@@ -148,6 +151,7 @@ onMounted(async () => {
   align-items: center;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--border-color);
+  flex-shrink: 0;
 }
 
 .page-header h1 {
@@ -159,6 +163,8 @@ onMounted(async () => {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  flex: 1;
+  overflow: hidden;
 }
 
 /* ==================== 卡片样式 ==================== */
@@ -169,6 +175,13 @@ onMounted(async () => {
   padding: 20px;
   box-shadow: var(--shadow-md);
   transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#tag-card{
+  height: 220px;
 }
 
 .card:hover {
@@ -178,6 +191,7 @@ onMounted(async () => {
 
 .card h2 {
   margin-bottom: 15px;
+  flex-shrink: 0;
 }
 
 /* ==================== 标签词云 ==================== */
@@ -186,8 +200,12 @@ onMounted(async () => {
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
-  align-items: center;
-  min-height: 300px;
+  align-items: flex-start;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+  border-radius: var(--radius-md);
 }
 
 .tag-item {
@@ -219,6 +237,10 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 5px;
 }
 
 .ranking-item {
@@ -272,6 +294,8 @@ onMounted(async () => {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 15px;
+  /* max-height: 120px; */
+  overflow-y: auto;
 }
 
 .stat-box {
@@ -302,6 +326,12 @@ onMounted(async () => {
   margin-top: 4px;
 }
 
+/* 统计卡片容器 */
+.content-page > .card {
+  flex-shrink: 0;
+  /* max-height: 140px; */
+}
+
 /* ==================== 响应式 ==================== */
 @media (max-width: 1024px) {
   .grid-container {
@@ -310,12 +340,20 @@ onMounted(async () => {
 }
 
 @media (max-width: 768px) {
-  .tags-cloud {
-    min-height: 200px;
+  .content-page {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
   }
 
   .stats-grid {
     grid-template-columns: 1fr;
+    max-height: 100%;
   }
 }
 </style>
