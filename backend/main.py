@@ -205,7 +205,7 @@ task_manager = TaskManager()
 class AnswerSiteCrawler:
     """天工开物问答站爬虫"""
 
-    BASE_URL = "https://answer.chancefoundation.org.cn"
+    BASE_URL = "http://localhost:3000"
 
     def __init__(self):
         self.headers = {

@@ -18,7 +18,7 @@ os.makedirs(INPUT_DIR, exist_ok=True)
 #解析页面结构
 import requests
 
-url = "https://answer.chancefoundation.org.cn/"
+url = "http://localhost:3000/"
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
 }
@@ -326,7 +326,7 @@ def save_data(df, output_path):
         f.write("天工开物问答站数据分析报告\n")
         f.write("="*60 + "\n")
         f.write(f"生成时间: {pd.Timestamp.now()}\n")
-        f.write(f"数据来源: https://answer.chancefoundation.org.cn/\n")
+        f.write(f"数据来源: http://localhost:3000/\n")
         f.write(f"总问题数: {len(df)}\n")
         f.write(f"总浏览数: {df['浏览数'].sum()}\n")
         f.write(f"总点赞数: {df['点赞数'].sum()}\n")
@@ -353,7 +353,7 @@ def main():
     print("天工开物问答站数据抓取工具")
     print(f"{'='*70}")
     
-    base_url = "https://answer.chancefoundation.org.cn/"
+    base_url = "http://localhost:3000/"
     output_path = os.path.join(OUTPUT_DIR, 'questions_data.csv')
     
     print(f"目标网站: {base_url}")
@@ -392,7 +392,7 @@ def quick_test():
     """
     print("快速测试 - 抓取第一页数据...")
     
-    url = "https://answer.chancefoundation.org.cn/questions"
+    url = "http://localhost:3000/questions"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
     }
@@ -878,7 +878,7 @@ class DataExporter:
             f.write("=" * 70 + "\n\n")
             
             f.write(f"报告生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-            f.write(f"数据来源: https://answer.chancefoundation.org.cn/\n")
+            f.write(f"数据来源: http://localhost:3000/\n")
             f.write(f"总数据量: {len(df)} 条记录\n\n")
             
             # 基础统计
@@ -1027,7 +1027,7 @@ def test_connection():
     """测试连接"""
     print("测试网站连接...")
     try:
-        response = requests.get("https://answer.chancefoundation.org.cn/questions", timeout=10)
+        response = requests.get("http://localhost:3000/questions", timeout=10)
         if response.status_code == 200:
             print("✅ 网站可正常访问")
             return True

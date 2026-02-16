@@ -3,7 +3,7 @@
     <!-- 导航栏 -->
     <nav class="navbar">
       <div class="navbar-left">
-        <div class="logo">🌟 天工开物数据系统</div>
+        <div class="logo">🌟 北太天元数据分析系统</div>
       </div>
       <div class="navbar-right">
         <div v-if="systemStatus" :class="['status', systemStatus.status === 'healthy' ? 'healthy' : 'error']">
